@@ -126,7 +126,8 @@ al::optional<std::string> AmbDecConf::load(const char *fname) noexcept
         }
         else if(scope == ReaderScope::LFMatrix || scope == ReaderScope::HFMatrix)
         {
-            auto &gains = (scope == ReaderScope::LFMatrix) ? LFOrderGain : HFOrderGain;
+            //TODO: Fix issue(s) causing these 3 lines to throw errors, Ambdec class not in use so commenting them out temporarily so rest of lib can be used
+            //auto &gains = (scope == ReaderScope::LFMatrix) ? LFOrderGain : HFOrderGain;
             auto *matrix = (scope == ReaderScope::LFMatrix) ? LFMatrix : HFMatrix;
             auto &pos = (scope == ReaderScope::LFMatrix) ? lfmatrix_pos : hfmatrix_pos;
 
@@ -139,8 +140,8 @@ al::optional<std::string> AmbDecConf::load(const char *fname) noexcept
                 {
                     --toread;
                     istr >> value;
-                    if(curgain < al::size(gains))
-                        gains[curgain++] = value;
+                   // if(curgain < al::size(gains))     //TODO: FIX!
+                   //     gains[curgain++] = value;
                 }
             }
             else if(command == "add_row")

@@ -15,8 +15,7 @@ project "OpenALSoft"
 		"common",
 		"examples/common",
 		"alc",
-		"al",
-		"router"
+		"al"
 	}
 
 	files
@@ -37,17 +36,13 @@ project "OpenALSoft"
 		"al/**.cpp",
 		"alc/**.h",
 		"alc/**.c",
-		"alc/**.cpp",
-		"router/**.h",
-		"router/**.c",
-		"router/**.cpp"
+		"alc/**.cpp"
 	}
 
 	excludes
 	{
 		"core/rtkit.cpp",
 		"core/dbus_wrap.cpp",
-		"core/ambdec.cpp",
 		"core/mixer/mixer_neon.cpp",
 		"alc/backends/coreaudio.cpp",
 		"alc/backends/alsa.cpp",
