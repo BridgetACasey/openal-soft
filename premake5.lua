@@ -10,42 +10,57 @@ project "OpenALSoft"
 	{
 		"%{ProjectDir}",
 		"include",
+		"include/AL",
+		"core",
 		"common",
-		"examples/common"
+		"examples/common",
+		"alc",
+		"al",
+		"router"
 	}
 
 	files
 	{
 		"config.h",
 		"version.h",
+		"core/**.h",
+		"core/**.c",
+		"core/**.cpp",
+		"common/**.h",
+		"common/**.c",
+		"common/**.cpp",
+		"examples/common/**.h",
+		"examples/common/**.c",
+		"examples/common/**.cpp",
 		"al/**.h",
 		"al/**.c",
 		"al/**.cpp",
 		"alc/**.h",
 		"alc/**.c",
 		"alc/**.cpp",
-		"common/**.h",
-		"common/**.c",
-		"common/**.cpp",
-		"examples/common/**.h",
-		"examples/common/**.c"
+		"router/**.h",
+		"router/**.c",
+		"router/**.cpp"
 	}
 
 	excludes
 	{
-		"alc/mixer/mixer_neon.cpp",
+		"core/rtkit.cpp",
+		"core/dbus_wrap.cpp",
+		"core/ambdec.cpp",
+		"core/mixer/mixer_neon.cpp",
 		"alc/backends/coreaudio.cpp",
-		"alc/backends/jack.cpp",
 		"alc/backends/alsa.cpp",
-		"alc/backends/oboe.cpp",
+		"alc/backends/jack.cpp",
 		"alc/backends/opensl.cpp",
 		"alc/backends/oss.cpp",
 		"alc/backends/pipewire.cpp",
-		"alc/backends/portaudio.cpp",
+		"alc/backends/oboe.cpp",
+		"alc/backends/solaris.cpp",
 		"alc/backends/pulseaudio.cpp",
-		"alc/backends/sdl2.cpp",
 		"alc/backends/sndio.cpp",
-		"alc/backends/solaris.cpp"
+		"alc/backends/sdl2.cpp",
+		"alc/backends/portaudio.cpp"
 	}
 
 	defines
